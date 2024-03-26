@@ -1,0 +1,17 @@
+Bouchra@2004
+
+Man has only one right arm. Right arm belongs to one man.
+
+Saying it inversely looks a little weird:
+
+Right arm has a man. A man belongs to right arm.
+
+You can have man without right arm. But alone right arm is useless.
+
+In sequelize if RightArm and Man are models, it may looks like:
+
+Man.hasOne(RightArm);      // ManId in RigthArm
+RightArm.belongsTo(Man);   // ManId in RigthArm
+
+
+and if we use has many we use belongs to

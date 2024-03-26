@@ -1,0 +1,98 @@
+<%- include('include/_nav') %>
+
+
+  <main>
+    <div class="clients">
+      <h2>Products</h2>
+      <div class="topnav">
+        <input type="search" class="form-control" placeholder="Search..">
+      </div>
+    </div>
+
+    <div>
+      <table class="table table-dark table-striped ">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Désignation</th>
+            <th scope="col">Type</th>
+            <th scope="col">Constructeur</th>
+            <th scope="col">Disponibilité</th>
+            <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <% if(products.length> 0){
+            let rowNum = 1;
+            products.forEach(function(data){
+            %>
+            <tr>
+              <td>
+                <%= rowNum++ %>
+              </td>
+              <td>
+                <%= data.désignation %>
+              </td>
+              <td>
+                <%= data.type %>
+              </td>
+              <td>
+                <%= data.constructeur %>
+              </td>
+              <td>
+                <%= data.disponibilité %>
+              </td>
+              <td>
+                <a href="/product/<%= data.id %>"><i class="fa-solid fa-pen-to-square edit"></i></a>
+                <a href="/product/delete/<%= data.id %>"><i class="fa-solid fa-trash trash"></i></a>
+              </td>
+            </tr>
+            <%})}%>
+        </tbody>
+      </table>
+    </div>
+
+
+  </main>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const searchInput = $('.topnav input[type="search"]');
+      const products = $('.table tbody tr');
+
+      searchInput.on('input', function() {
+        filterProducts();
+      });
+
+      searchInput.on('keydown', function(event) {
+        if (event.key === 'Enter') {
+          filterProducts();
+        }
+      });
+
+      function filterProducts() {
+        const searchTerm = searchInput.val().toLowerCase();
+
+        products.each(function() {
+          const clientType = $(this).find('td:nth-child(2)').text().toLowerCase();
+          const clientConstructeur = $(this).find('td:nth-child(3)').text().toLowerCase();
+          const clientDisponibilité = $(this).find('td:nth-child(5)').text().toLowerCase();
+
+          // Check if any of the fields contain the search term
+          if (clientType.includes(searchTerm) || clientConstructeur.includes(searchTerm) || clientDisponibilité.includes(searchTerm)) {
+            $(this).css('display', 'table-row');
+          } else {
+            $(this).css('display', 'none');
+          }
+        });
+      }
+    });
+  </script>
+
+
+
+
+  <%- include('include/_footer') %>

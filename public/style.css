@@ -1,0 +1,281 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #1a1f36;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Ubuntu, sans-serif;
+}
+
+body {
+    background-color: #404040;
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+}
+
+nav {
+    padding: 1rem 2rem;
+    background-color: rgb(62, 79, 79);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(184, 184, 184)
+}
+
+nav a {
+    text-decoration: none;
+    margin: 40px;
+    color: rgb(184, 184, 184);
+    font-size: 20px;
+    transition: 0.17s;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: rgb(39, 36, 54);
+}
+
+.card-body {
+    border-radius: 10px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+header {
+    height: 100vh;
+    width: 250px;
+    overflow: hidden;
+    text-align: center;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    padding-top: 60px;
+}
+
+header h3 {
+    padding-bottom: 15px;
+    color: rgba(240, 248, 255, 0.815);
+}
+
+header a {
+    padding: 8px 0;
+    text-decoration: none;
+    font-size: 21px;
+    color: #818181;
+    display: block;
+    transition: 0.17s;
+}
+
+hr {
+    background-color: #c3c3c3a9;
+}
+
+
+
+header a:hover {
+    color: #c3c3c3;
+    text-decoration: none;
+}
+
+main {
+    height: 100%;
+    position: absolute;
+    padding-left: 250px;
+    overflow-y: auto;
+    width: 100vw;
+}
+
+.cards {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+
+}
+
+.card-info {
+    margin: 1rem 2rem;
+    background-color: #1e1c23;
+}
+
+.card-info a {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.card-info i {
+    color: aliceblue;
+    padding: 1rem;
+}
+
+
+
+th {
+    color: rgba(255, 255, 255, 0.842);
+}
+
+td {
+    color: rgba(255, 255, 255, 0.842);
+}
+
+table {
+    margin-top: 1rem;
+}
+
+.clients {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.clients h2 {
+    margin-left: 1rem;
+    font-weight: 600;
+    color: #c3c3c3;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.675);
+}
+
+.topnav{
+    margin-right: 1rem;
+}
+
+.topnav input[type=search] {
+    padding: 7px 5px;
+    border: none;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    background-color: #888888;
+    color: #242323;
+    border: 1px solid;
+}
+.topnav input[type=search]::placeholder {
+    color: #242323; 
+}
+input:focus {
+    outline: none;
+}
+
+.insform {
+    text-align: center;
+}
+
+.formulaire {
+    margin-top: 0.4rem;
+    margin-left: 5rem;
+    background-color: #5d5d5d;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: inline-block;
+}
+
+.formulaire input[type=text] {
+    width: 300px;
+}
+
+main h3 {
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    color: #c3c3c3;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.675);
+}
+
+.account {
+    margin-top: 5rem;
+    width: 300px;
+}
+
+.account a {
+    text-decoration: none;
+    color: #c3c3c3;
+    background-color: #1a1f36;
+    padding: 0.5rem 1rem;
+    border-radius: 10%;
+    transition: 0.17s;
+}
+
+.account a:hover {
+    text-decoration: none;
+    background-color: #1a1f368a;
+}
+
+tbody i {
+    color: rgba(255, 255, 255, 0.736);
+    transition: 0.13s;
+}
+
+tbody i.trash:hover {
+    color: rgba(183, 1, 1, 0.654);
+}
+
+tbody i.edit:hover {
+    color: rgb(5, 84, 35);
+}
+
+tbody i.eye:hover {
+    color: rgb(8, 6, 89);
+}
+
+.clients i.plus {
+    color: #c3c3c3b0;
+    border-radius: 10px;
+    padding-right: 0.3rem;
+}
+
+.clients a.adding {
+    background-color: #1a1f36;
+    color: #c3c3c3b0;
+    padding: 0.4rem 0.6rem;
+    border-radius: 10px;
+    transition: 0.15s;
+    margin-right: 1rem;
+}
+
+.clients a:hover {
+    text-decoration: none;
+    background-color: #3c4671;
+    color: #111;
+}
+
+.formulaire select {
+    padding: 0.2rem 0.4rem;
+}
+
+.mess {
+    margin-top: 0.7rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 5px;
+}
+.buttons{
+    display: inline-flex;
+    align-items: center;
+}
+.log{
+background:none;
+}
+.logg{
+    margin-top: 5rem;
+    background-color: #5d5d5d;
+    border-radius: 10px;
+}
+
+#exportExcelBtn{
+    margin-right: 0.5rem;
+    border-radius: 10px;
+    background: none;
+    padding: 0.3rem 0.5rem;
+    border: none;
+    background-color: rgba(157, 175, 254, 0.555);
+    transition: 0.14s;
+}
+#exportExcelBtn:hover{
+    background-color: rgba(157, 175, 254, 0.825);
+}

@@ -1,0 +1,32 @@
+<%- include('include/_nav') %>
+
+    <main>
+
+        <h3>Editer Un Client</h3>
+        <hr>
+        <div class="insform">
+            <form action="/client/<%= clients.id %>" method="POST" class="formulaire">
+                <div class="form-group">
+                    <label for="companyname">Nom</label>
+                    <input type="text" class="form-control" name="companyname" id="companyname"
+                        value="<%= clients.companyname %>">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" value="<%= clients.email %>">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" class="form-control" name="phone" id="phone" value="<%= clients.phone %>">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+
+
+    </main>
+
+
+    <%- include('include/_footer') %>

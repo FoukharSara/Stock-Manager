@@ -1,0 +1,47 @@
+<%- include('include/_nav') %>
+
+  <main>
+
+    <h3>Ajouter Client</h3>
+    <hr>
+
+    <div class="insform">
+      <form action="/createclient" method="POST" class="formulaire" id="add_client">
+        <div class="form-group">
+          <label for="companyname">Nom</label>
+          <input type="text" class="form-control" name="companyname" id="companyname" placeholder="exemple">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="email@gmail.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Téléphone</label>
+          <input type="tel" class="form-control" name="phone" id="phone" placeholder="06********">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <%if (message!="" ){ %>
+          <%if (message==="Adresse e-Mail  utilisée" ){%>
+            <h5 class=" mess alert-danger" role="alert">
+              <%=message%>
+            </h5>
+            <%}%>
+              <%if (message==="Client Ajouté" ){%>
+                <h5 class=" mess alert-success" role="alert">
+                  <%=message%>
+                </h5>
+                <%}%>
+                  <%if (message==="Veuillez remplir les infos" ){%>
+                    <h5 class=" mess alert-danger" role="alert">
+                      <%=message%>
+                    </h5>
+                    <%}%>
+                      <%}%>
+      </form>
+    </div>
+
+  </main>
+
+
+  <%- include('include/_footer') %>

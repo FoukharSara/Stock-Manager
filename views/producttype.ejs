@@ -1,0 +1,84 @@
+<%- include('include/_nav') %>
+
+
+  <main>
+    <div class="clients">
+      <h2>Types des Produits</h2>
+      <a href="/add_prodtype" class="adding"><i class="fa-solid fa-plus plus"></i>Ajouter Un type</a>
+
+      <div class="topnav">
+        <input type="search" class="form-control" placeholder="Search..">
+      </div>
+    </div>
+
+    <div>
+      <table class="table table-dark table-striped ">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <% if(products.length> 0){
+            let row=1
+            products.forEach(function(data){
+            %>
+            <tr>
+              <td>
+                <%= row++ %>
+              </td>
+              <td>
+                <%= data.label %>
+              </td>
+              
+              <td>
+                <a href="/edit_producttype/<%= data.id %>"><i class="fa-solid fa-pen-to-square edit"></i></a>
+                <a href="/producttype/delete/<%= data.id %>"><i class="fa-solid fa-trash trash"></i></a>
+              </td>
+            </tr>
+            <%})}%>
+        </tbody>
+      </table>
+    </div>
+
+
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const searchInput = $('.topnav input[type="search"]');
+      const producttype = $('.table tbody tr');
+
+      searchInput.on('input', function() {
+        filterProductTypes();
+      });
+
+      searchInput.on('keydown', function(event) {
+        if (event.key === 'Enter') {
+          filterProductTypes();
+        }
+      });
+
+      function filterProductTypes() {
+        const searchTerm = searchInput.val().toLowerCase();
+
+        producttype.each(function() {
+          const clientLabel = $(this).find('td:nth-child(2)').text().toLowerCase();
+
+          // Check if any of the fields contain the search term
+          if (clientLabel.includes(searchTerm)) {
+            $(this).css('display', 'table-row');
+          } else {
+            $(this).css('display', 'none');
+          }
+        });
+      }
+    });
+  </script>
+
+
+  <%- include('include/_footer') %>

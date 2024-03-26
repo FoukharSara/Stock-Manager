@@ -1,0 +1,52 @@
+<%- include('include/_nav') %>
+
+  <main>
+
+    <h3>Ajouter Produit</h3>
+    <hr>
+
+    <div class="insform">
+      <form action="/createproduct" method="POST" class="formulaire">
+        <div class="form-group">
+          <label for="désignation">Désignation</label>
+          <input type="text" class="form-control" name="désignation" id="désignation">
+        </div>
+        <div class="form-group">
+          <label for="type">Type</label>
+          <select class="form-select form-control" name="label" aria-label="Default select example">
+            <option value="" disabled selected>Type de produit</option>
+            <% prodtype.forEach(function(data){ %>
+              <option value="<%= data.label %>" id="label" name="label">
+                <%= data.label %>
+              </option>
+              <% }) %>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="constructeur">Constructeur</label>
+          <input type="text" class="form-control" name="constructeur" id="constructeur">
+        </div>
+        <div class="form-group">
+          <label for="disponibilité">Disponibilité</label>
+          <input type="text" class="form-control" name="disponibilité" id="disponibilité">
+        </div>
+
+        <input type="submit" class="btn btn-primary"></button>
+        <%if (message==="Produit Ajouté" ){ %>
+          <h5 class=" mess alert-success" role="alert">
+            <%=message%>
+          </h5>
+          <%}%>
+            <%if (message==="Veuillez remplir les infos" ){%>
+              <h5 class=" mess alert-danger" role="alert">
+                <%=message%>
+              </h5>
+              <%}%>
+      </form>
+    </div>
+
+
+  </main>
+
+
+  <%- include('include/_footer') %>

@@ -1,0 +1,42 @@
+number							<<<check>>>
+search in products and type				<<<check>>>
+type de produit in add product				<<<check>>>
+delete product type delete all products			<<<check>>>
+pdf 							<<<check>>>
+
+search							<<<check>>>
+empty things type name and stuff message		<<<check>>>
+account							<<<check>>>
+type de produit						<<<check>>>
+email already used					<<<check>>>
+messages						<<<check>>>
+#							<<<check>>>
+Sara@33
+
+jeudi
+connect data base 					<<<check>>>
+ejs home login about 					<<<check>>>
+create a new user if it doesnt exist			<<<check>>
+G2tx33&
+Sara@gA
+$2b$10$C.30okGv2EdjPS4CBagaduEq4PLKPosy03.9KTWk
+
+vendredi
+login how to do it					<<<check>>
+ejs only after 						<<<check>>
+ejs home after loging in				<<<check>>
+
+samedi			
+controllers (models: create post put delete)            <<<check>>
+ejs add product user product prodtype edit profile	<<<check>> 
+
+Dimanche
+enter pages just after logging in			<<<check>>	
+logout							<<<check>>
+email already used message ejs				<<<check>>
+
+
+
+
+
+Produits sreveur and stuff

@@ -1,0 +1,29 @@
+<%- include('include/_nav') %>
+
+  <main>
+
+    <h3>Ajouter Un Type de Produit</h3>
+    <hr>
+
+    <div class="insform">
+      <form action="/add_prodtype" method="POST" class="formulaire" id="add_client">
+        <div class="form-group">
+          <label for="label">Nom</label>
+          <input type="text" class="form-control" name="label" id="label" placeholder="exemple">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <%if (message==="Element Ajouté" ){ %>
+          <h5 class=" mess alert-success" role="alert">
+            <%=message%>
+          </h5>
+          <%}%>
+            <%if (message==="Veuillez remplir les infos" ){%>
+              <h5 class=" mess alert-danger" role="alert">
+                <%=message%>
+              </h5>
+              <%}%>
+      </form>
+    </div>
+
+  </main>
+  <%- include('include/_footer') %>

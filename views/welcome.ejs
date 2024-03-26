@@ -1,0 +1,128 @@
+<%- include('include/_nav') %>
+
+
+  <main>
+    <div class="container">
+      <div class="cards">
+        <div class="card card-info" style="width: 16rem;">
+          <div class="card-body">
+            <a href="/products"><i class="fa-solid fa-cart-shopping"></i>Produits</a>
+          </div>
+        </div>
+        <div class="card card-info" style="width: 16rem;">
+          <div class="card-body">
+            <a href="/producttype"><i class="fa-solid fa-border-all"></i>Tous les Catégories</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clients">
+      <h2>Clients</h2>
+
+      <div class="topnav ">
+      <div class="buttons">
+        <button id="exportExcelBtn"><i class="fa-solid fa-share-from-square"></i></button>
+        <input type="search" class="form-control" placeholder="Search..">
+      </div>
+      </div>
+    </div>
+
+    <div>
+      <table class="table table-dark table-striped ">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Email</th>
+            <th scope="col">Téléphone</th>
+            <th scope="col">Ajouté Par</th>
+            <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <% if(clients.length> 0){
+            let rowNum = 1;
+            clients.forEach(function(data){
+            %>
+            <tr>
+              <td>
+                <%= rowNum++ %>
+              </td>
+              <td>
+                <%= data.companyname %>
+              </td>
+              <td>
+                <%= data.email %>
+              </td>
+              <td>
+                <%= data.phone %>
+              </td>
+              <td>
+                <%= data.addedby %>
+              </td>
+              <td>
+                <a href="/view/<%= data.id %>"><i class="fa-solid fa-eye eye"></i></a>
+                <a href="/client/<%= data.id %>"><i class="fa-solid fa-pen-to-square edit"></i></a>
+                <a href="/delete/<%= data.id %>"><i class="fa-solid fa-trash trash"></i></a>
+              </td>
+            </tr>
+            <%})}%>
+        </tbody>
+      </table>
+    </div>
+
+
+  </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const searchInput = $('.topnav input[type="search"]');
+      const clients = $('.table tbody tr');
+  
+      searchInput.on('input', function() {
+        filterClients();
+      });
+  
+      searchInput.on('keydown', function(event) {
+        if (event.key === 'Enter') {
+          filterClients();
+        }
+      });
+  
+      function filterClients() {
+        const searchTerm = searchInput.val().toLowerCase();
+  
+        clients.each(function() {
+          const clientName = $(this).find('td:nth-child(2)').text().toLowerCase();
+          const clientEmail = $(this).find('td:nth-child(3)').text().toLowerCase();
+  
+          if (clientName.includes(searchTerm) || clientEmail.includes(searchTerm)) {
+            $(this).css('display', 'table-row');
+          } else {
+            $(this).css('display', 'none');
+          }
+        });
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const exportExcelBtn = document.getElementById('exportExcelBtn');
+        const table = document.querySelector('.table'); // Change this selector to match your table
+
+        exportExcelBtn.addEventListener('click', function () {
+            const wb = XLSX.utils.table_to_book(table);
+            XLSX.writeFile(wb, 'table_data.xlsx');
+        });
+    });
+</script>
+
+  </body>
+  
+  
+  
+
+
+  <%- include('include/_footer') %>

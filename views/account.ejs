@@ -1,0 +1,28 @@
+<%- include('include/_nav') %>
+
+  <main>
+    <div style="width: 18rem;">
+      <div class="card-body formulaire account">
+        <p>Nom : <span>
+            <%= account.firstname %>
+          </span></p>
+        <hr>
+        <p>Prénom : <span>
+            <%= account.lastname %>
+          </span></p>
+        <hr>
+        <p>Username : <span>
+            <%= account.username %>
+          </span></p>
+        <hr>
+        <p>Email : <span>
+            <%= account.email %>
+          </span></p>
+        <hr>
+        <a href="/account">Edit</a>
+      </div>
+    </div>
+  </main>
+
+
+  <%- include('include/_footer') %>

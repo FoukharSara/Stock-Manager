@@ -1,0 +1,44 @@
+<%- include('include/_nav') %>
+
+  <main>
+
+    <h3>Editer User</h3>
+    <hr>
+
+    <div class="insform">
+      <form action="/account/<%= account.id %>" method="POST" class="formulaire">
+        <div class="form-group">
+          <label for="lastname">Nom</label>
+          <input type="text" class="form-control" id="lastname" name="lastname" value="<%= account.lastname %>">
+        </div>
+        <div class="form-group">
+          <label for="firstname">Prénom</label>
+          <input type="text" class="form-control" id="firstname" name="firstname" value="<%= account.firstname %>">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+
+      <form action="/change_password/<%= account.id %>" method="POST" class="formulaire">
+        <div class="form-group">
+          <label for="oldPassword">Mot De Passe Actuel</label>
+          <input type="password" class="form-control" name="oldPassword" id="oldPassword">
+        </div>
+        <div class="form-group">
+          <label for="newPassword">Nouveau Mot De Passe</label>
+          <input type="password" class="form-control" name="newPassword" id="newPassword">
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Verifier Mot de Passe</label>
+          <input type="password" class="form-control" name="confirmPassword" id="confirmPassword">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    </div>
+
+
+  </main>
+
+
+  <%- include('include/_footer') %>

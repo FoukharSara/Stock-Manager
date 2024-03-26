@@ -1,0 +1,23 @@
+<%- include('include/_nav') %>
+
+    <main>
+
+        <h3>Editer Un Produit</h3>
+        <hr>
+        <div class="insform">
+            <form action="/producttype/<%= product.id %>" method="POST" class="formulaire">
+                <div class="form-group">
+                    <label for="label">Label</label>
+                    <input type="text" class="form-control" name="label" id="label" value="<%= product.label %>">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+
+
+    </main>
+
+
+    <%- include('include/_footer') %>
